@@ -2,6 +2,7 @@ package com.SpringBoot_RangoExpress.Controller;
 
 import com.SpringBoot_RangoExpress.DTO.LoginResponse;
 import com.SpringBoot_RangoExpress.DTO.UserDetailsDTO;
+import com.SpringBoot_RangoExpress.Error.ErrorResponse;
 import com.SpringBoot_RangoExpress.Exception.NotFoundUserList;
 import com.SpringBoot_RangoExpress.Exception.UserWasRegistred;
 import com.SpringBoot_RangoExpress.Model.User;
@@ -9,9 +10,7 @@ import com.SpringBoot_RangoExpress.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.ErrorResponse;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -47,7 +46,7 @@ public class UserController {
 
     @PostMapping("/login")
     public ResponseEntity<LoginResponse> login(@RequestBody User user) {
-        System.out.println("Login Recebido Controller: " + user.getUsername());
+        System.out.println("Login Recebido Controller: " + user.getCpf());
         System.out.println("A Senha Recebida Controller: " + user.getPassword());
         LoginResponse response = userService.findByUsernameAndPassword(user);
         System.out.println("Retorno da Consulta: " + response);
