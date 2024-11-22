@@ -21,7 +21,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userRepository
-                .findByUsername(username)
+                .findByCpf(username)
                 .orElseThrow(() -> new UsernameNotFoundException(username));
 
         Set<GrantedAuthority> authorities = user.getRoles()
@@ -30,7 +30,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
                 .collect(Collectors.toSet());
 
         return new org.springframework.security.core.userdetails.User(
-                user.getUsername(),
+                user.getCpf(),
                 user.getPassword(),
                 authorities);
     }
