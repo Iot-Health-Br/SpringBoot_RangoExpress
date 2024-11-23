@@ -25,41 +25,25 @@ public class CardapioService {
     }
 
     private PratoDTO convertToPratoDTO(PratoPredefinido prato) {
-        // Obtém os nomes dos ingredientes
-        List<String> ingredientes = new ArrayList<>();
-
-        // Adiciona os ingredientes baseado no enum PratoPredefinido
-        switch (prato) {
-            case EXECUTIVO_FRANGO:
-                ingredientes.add(Proteina.FRANGO_GRELHADO.getNome());
-                ingredientes.add(Carboidrato.ARROZ_BRANCO.getNome());
-                ingredientes.add(Carboidrato.FEIJAO_CARIOCA.getNome());
-                ingredientes.add(Guarnicao.LEGUMES_VAPOR.getNome());
-                break;
-            case EXECUTIVO_CARNE:
-                ingredientes.add(Proteina.CARNE_ASSADA.getNome());
-                ingredientes.add(Carboidrato.ARROZ_BRANCO.getNome());
-                ingredientes.add(Carboidrato.FEIJAO_PRETO.getNome());
-                ingredientes.add(Guarnicao.PURE_BATATA.getNome());
-                break;
-            case FIT_PEIXE:
-                ingredientes.add(Proteina.FILE_PEIXE.getNome());
-                ingredientes.add(Carboidrato.ARROZ_INTEGRAL.getNome());
-                ingredientes.add(Guarnicao.LEGUMES_VAPOR.getNome());
-                ingredientes.add(Salada.ALFACE.getNome());
-                break;
-            case VEGETARIANO:
-                ingredientes.add(Proteina.OMELETE.getNome());
-                ingredientes.add(Carboidrato.ARROZ_INTEGRAL.getNome());
-                ingredientes.add(Guarnicao.LEGUMES_REFOGADOS.getNome());
-                ingredientes.add(Salada.JILO.getNome());
-                break;
-        }
+        List<String> ingredientes = prato.getIngredientes().stream()
+                .map(ingrediente -> {
+                    if (ingrediente instanceof Proteina) {
+                        return ((Proteina) ingrediente).getNome();
+                    } else if (ingrediente instanceof Carboidrato) {
+                        return ((Carboidrato) ingrediente).getNome();
+                    } else if (ingrediente instanceof Guarnicao) {
+                        return ((Guarnicao) ingrediente).getNome();
+                    } else if (ingrediente instanceof Salada) {
+                        return ((Salada) ingrediente).getNome();
+                    }
+                    return ingrediente.toString();
+                })
+                .collect(Collectors.toList());
 
         return new PratoDTO(
-                prato.getNome(), // Nome do prato
-                prato.getValor(), // Valor do prato
-                ingredientes // Lista de ingredientes
+                prato.getNome(),
+                prato.getValor(),
+                ingredientes
         );
     }
 }
