@@ -1,5 +1,6 @@
 package com.SpringBoot_RangoExpress.Controller;
 
+import com.SpringBoot_RangoExpress.DTO.PratoDTO;
 import com.SpringBoot_RangoExpress.Enum.PratoPredefinido;
 import com.SpringBoot_RangoExpress.Service.CardapioService;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,12 +22,12 @@ public class CardapioController {
     }
 
     @GetMapping("/hoje")
-    public List<PratoPredefinido> getPratosDoDia() {
-        return cardapioService.getPratosDoDia();
+    public List<PratoDTO> getPratosDoDia() {
+        return cardapioService.getPratosDoDiaDetalhado();
     }
 
     @GetMapping("/dia/{dia}")
-    public List<PratoPredefinido> getPratosDoDia(@PathVariable DayOfWeek dia) {
-        return cardapioService.getPratosDoDia(dia);
+    public List<PratoDTO> getPratosDoDia(@PathVariable DayOfWeek dia) {
+        return cardapioService.getPratosDoDiaDetalhado(dia);
     }
 }
