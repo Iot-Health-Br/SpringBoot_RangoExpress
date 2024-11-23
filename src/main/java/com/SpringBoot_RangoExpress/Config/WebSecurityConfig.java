@@ -45,9 +45,11 @@ public class WebSecurityConfig {
                         .requestMatchers(HttpMethod.POST, "/user/save").permitAll()
                         .requestMatchers(HttpMethod.POST, "/user/saveAdm").permitAll()
                         .requestMatchers(HttpMethod.GET, "/user/getUser").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/api/cardapio/hoje").permitAll()
                         .requestMatchers("/h2-console/**").permitAll()
                         .requestMatchers(URL + "api/user").hasAnyRole("USER", "ADM")
                         .requestMatchers(URL + "/adm").hasAnyRole("ADM")
+                        //.requestMatchers("/api/cardapio/**").hasAnyRole("USER", "ADM")
                         .anyRequest().authenticated())
                 .headers(headers -> headers
                         .frameOptions(frame -> frame.sameOrigin()));
