@@ -10,25 +10,29 @@ public enum CardapioDiario {
             PratoPredefinido.EXECUTIVO_FRANGO,
             PratoPredefinido.VEGETARIANO
     )),
-
     TERCA(DayOfWeek.TUESDAY, Arrays.asList(
             PratoPredefinido.EXECUTIVO_CARNE,
             PratoPredefinido.FIT_PEIXE
     )),
-
     QUARTA(DayOfWeek.WEDNESDAY, Arrays.asList(
             PratoPredefinido.FIT_PEIXE,
             PratoPredefinido.VEGETARIANO
     )),
-
     QUINTA(DayOfWeek.THURSDAY, Arrays.asList(
             PratoPredefinido.EXECUTIVO_FRANGO,
             PratoPredefinido.EXECUTIVO_CARNE
     )),
-
     SEXTA(DayOfWeek.FRIDAY, Arrays.asList(
             PratoPredefinido.EXECUTIVO_CARNE,
             PratoPredefinido.FIT_PEIXE
+    )),
+    SABADO(DayOfWeek.SATURDAY, Arrays.asList(
+            PratoPredefinido.VEGETARIANO,
+            PratoPredefinido.EXECUTIVO_CARNE
+    )),
+    DOMINGO(DayOfWeek.SUNDAY, Arrays.asList(
+            PratoPredefinido.EXECUTIVO_FRANGO,
+            PratoPredefinido.VEGETARIANO
     ));
 
     private final DayOfWeek dia;

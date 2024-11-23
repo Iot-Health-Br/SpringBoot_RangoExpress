@@ -16,7 +16,6 @@ public enum PratoPredefinido {
                     Guarnicao.LEGUMES_VAPOR
             )
     ),
-
     EXECUTIVO_CARNE(
             "Executivo Carne",
             new BigDecimal("20.90"),
@@ -27,7 +26,6 @@ public enum PratoPredefinido {
                     Guarnicao.PURE_BATATA
             )
     ),
-
     FIT_PEIXE(
             "Fit Peixe",
             new BigDecimal("22.90"),
@@ -38,7 +36,6 @@ public enum PratoPredefinido {
                     Salada.ALFACE
             )
     ),
-
     VEGETARIANO(
             "Vegetariano",
             new BigDecimal("16.90"),
@@ -50,6 +47,17 @@ public enum PratoPredefinido {
             )
     );
 
-    <T> PratoPredefinido(String s, BigDecimal bigDecimal, List<T> list) {
+    private final String nome;
+    private final BigDecimal valor;
+    private final List<Object> ingredientes;
+
+    PratoPredefinido(String nome, BigDecimal valor, List<Object> ingredientes) {
+        this.nome = nome;
+        this.valor = valor;
+        this.ingredientes = ingredientes;
     }
+
+    public String getNome() { return nome; }
+    public BigDecimal getValor() { return valor; }
+    public List<Object> getIngredientes() { return ingredientes; }
 }
