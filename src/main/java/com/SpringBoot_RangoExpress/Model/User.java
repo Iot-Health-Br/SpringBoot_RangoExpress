@@ -19,6 +19,8 @@ public class User {
     private String telefone;
     private String email;
     private String endereco;
+    private String latitude;
+    private String longitude;
     private String password;
 
     @ElementCollection(fetch = FetchType.EAGER)
@@ -29,7 +31,7 @@ public class User {
     public User() {
     }
 
-    public User(Long id, String nome, String cpf, String genero, String nascimento, String telefone, String email, String endereco, String password, List<String> roles) {
+    public User(Long id, String nome, String cpf, String genero, String nascimento, String telefone, String email, String endereco, String latitude, String longitude, String password, List<String> roles) {
         this.id = id;
         this.nome = nome;
         this.cpf = cpf;
@@ -38,6 +40,8 @@ public class User {
         this.telefone = telefone;
         this.email = email;
         this.endereco = endereco;
+        this.latitude = latitude;
+        this.longitude = longitude;
         this.password = password;
         this.roles = roles;
     }
@@ -106,6 +110,22 @@ public class User {
         this.endereco = endereco;
     }
 
+    public String getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
+    }
+
+    public String getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
+    }
+
     public String getPassword() {
         return password;
     }
@@ -149,6 +169,8 @@ public class User {
                 ", telefone='" + telefone + '\'' +
                 ", email='" + email + '\'' +
                 ", endereco='" + endereco + '\'' +
+                ", latitude='" + latitude + '\'' +
+                ", longitude='" + longitude + '\'' +
                 ", password='" + password + '\'' +
                 ", roles=" + roles +
                 '}';

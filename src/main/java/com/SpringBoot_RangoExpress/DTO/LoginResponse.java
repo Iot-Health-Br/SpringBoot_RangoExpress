@@ -9,14 +9,20 @@ public class LoginResponse {
     private List<String> roles;
     private Long userId;      // Novo campo
     private String fullName;  // Novo campo
+    private String endereco;
+    private String latitude;
+    private String longitude;
 
-    public LoginResponse(boolean authenticated, String message, String username, List<String> roles, Long userId, String fullName) {
+    public LoginResponse(boolean authenticated, String message, String username, List<String> roles, Long userId, String fullName, String endereco, String latitude, String longitude) {
         this.authenticated = authenticated;
         this.message = message;
         this.username = username;
         this.roles = roles;
         this.userId = userId;
         this.fullName = fullName;
+        this.endereco = endereco;
+        this.latitude = latitude;
+        this.longitude = longitude;
     }
 
     // Getters e Setters
@@ -45,6 +51,30 @@ public class LoginResponse {
         this.fullName = fullName;
     }
 
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
+    public String getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
+    }
+
+    public String getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
+    }
+
     @Override
     public String toString() {
         return "LoginResponse{" +
@@ -54,6 +84,9 @@ public class LoginResponse {
                 ", roles=" + roles +
                 ", userId=" + userId +
                 ", fullName='" + fullName + '\'' +
+                ", endereco='" + endereco + '\'' +
+                ", latitude='" + latitude + '\'' +
+                ", longitude='" + longitude + '\'' +
                 '}';
     }
 }

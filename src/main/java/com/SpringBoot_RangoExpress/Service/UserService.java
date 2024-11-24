@@ -69,12 +69,18 @@ public class UserService {
                         authenticatedUser.getCpf(),
                         authenticatedUser.getRoles(), // Agora retornamos a lista de roles
                         authenticatedUser.getId(),        // Novo campo
-                        authenticatedUser.getNome()   // Novo campo
+                        authenticatedUser.getNome(),   // Novo campo
+                        authenticatedUser.getEndereco(),
+                        authenticatedUser.getLatitude(),
+                        authenticatedUser.getLongitude()
                 );
             } else {
                 return new LoginResponse(
                         false,
                         "Usuário ou senha inválidos",
+                        null,
+                        null,
+                        null,
                         null,
                         null,
                         null,
@@ -85,6 +91,9 @@ public class UserService {
             return new LoginResponse(
                     false,
                     "Erro ao processar a autenticação: " + e.getMessage(),
+                    null,
+                    null,
+                    null,
                     null,
                     null,
                     null,

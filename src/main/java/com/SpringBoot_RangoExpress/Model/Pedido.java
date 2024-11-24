@@ -25,6 +25,21 @@ public class Pedido {
     @JoinColumn(name = "pedido_id")
     private List<ItemPedido> itens;
 
+    @Column(nullable = false)
+    private long idUsuario;
+
+    @Column(nullable = false)
+    private String nomeUsuario;
+
+    @Column(nullable = false)
+    private String endereco;
+
+    @Column(nullable = false)
+    private String latitude;
+
+    @Column(nullable = false)
+    private String longitude;
+
     private BigDecimal totalPedido;
 
     @Column(nullable = false)
