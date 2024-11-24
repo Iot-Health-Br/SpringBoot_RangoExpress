@@ -1,82 +1,36 @@
 package com.SpringBoot_RangoExpress.Model;
 
-import com.SpringBoot_RangoExpress.Enum.PratoPredefinido;
+
+import com.SpringBoot_RangoExpress.Enum.StatusPedido;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 
-
+@Entity
+@Table(name = "pedidos")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Pedido {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private PratoPredefinido pratoEscolhido;
+
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "pedido_id")
+    private List<ItemPedido> itens;
+
+    private BigDecimal totalPedido;
+
+    @Column(nullable = false)
     private LocalDateTime dataPedido;
+
+    @Enumerated(EnumType.STRING)
     private StatusPedido status;
-    private BigDecimal valorTotal;
-
-    public enum StatusPedido {
-        RECEBIDO,
-        EM_PREPARACAO,
-        PRONTO,
-        ENTREGUE,
-        CANCELADO
-    }
-
-    public Pedido(PratoPredefinido pratoEscolhido) {
-        this.pratoEscolhido = pratoEscolhido;
-        this.dataPedido = LocalDateTime.now();
-        this.status = StatusPedido.RECEBIDO;
-    }
-
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public PratoPredefinido getPratoEscolhido() {
-        return pratoEscolhido;
-    }
-
-    public void setPratoEscolhido(PratoPredefinido pratoEscolhido) {
-        this.pratoEscolhido = pratoEscolhido;
-    }
-
-    public LocalDateTime getDataPedido() {
-        return dataPedido;
-    }
-
-    public void setDataPedido(LocalDateTime dataPedido) {
-        this.dataPedido = dataPedido;
-    }
-
-    public StatusPedido getStatus() {
-        return status;
-    }
-
-    public void setStatus(StatusPedido status) {
-        this.status = status;
-    }
-
-    public BigDecimal getValorTotal() {
-        return valorTotal;
-    }
-
-    public void setValorTotal(BigDecimal valorTotal) {
-        this.valorTotal = valorTotal;
-    }
-
-    @Override
-    public String toString() {
-        return "Pedido{" +
-                "id=" + id +
-                ", pratoEscolhido=" + pratoEscolhido +
-                ", dataPedido=" + dataPedido +
-                ", status=" + status +
-                ", valorTotal=" + valorTotal +
-                '}';
-    }
-
-    // Getters e setters
 }
+
