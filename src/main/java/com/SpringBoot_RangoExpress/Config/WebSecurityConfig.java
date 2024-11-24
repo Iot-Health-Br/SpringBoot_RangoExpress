@@ -41,15 +41,23 @@ public class WebSecurityConfig {
                 .sessionManagement(session -> session
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(authorize -> authorize
+
                         .requestMatchers(HttpMethod.POST, "/user/login").permitAll()
                         .requestMatchers(HttpMethod.POST, "/user/save").permitAll()
                         .requestMatchers(HttpMethod.POST, "/user/saveAdm").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/api/pedido/pedidos").permitAll()
+
+
                         .requestMatchers(HttpMethod.GET, "/user/getUser").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/cardapio/hoje").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/cardapio/dia/**").permitAll()
+
+
                         .requestMatchers("/h2-console/**").permitAll()
                         .requestMatchers(URL + "api/user").hasAnyRole("USER", "ADM")
                         .requestMatchers(URL + "/adm").hasAnyRole("ADM")
+                        .requestMatchers(URL + "/cardapio/**").hasAnyRole("USER", "ADM")
+                        .requestMatchers(URL + "/pedido/**").hasAnyRole("USER", "ADM")
                         //.requestMatchers("/api/cardapio/**").hasAnyRole("USER", "ADM")
                         .anyRequest().authenticated())
                 .headers(headers -> headers

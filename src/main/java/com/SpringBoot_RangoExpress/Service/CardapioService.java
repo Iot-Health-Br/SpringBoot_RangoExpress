@@ -2,17 +2,22 @@ package com.SpringBoot_RangoExpress.Service;
 
 import com.SpringBoot_RangoExpress.DTO.PratoDTO;
 import com.SpringBoot_RangoExpress.Enum.*;
+import com.SpringBoot_RangoExpress.Repository.PedidoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 // Serviço para gerenciar o cardápio
 @Service
 public class CardapioService {
+
+    @Autowired
+    private PedidoRepository pedidoRepository;
+
     public List<PratoDTO> getPratosDoDiaDetalhado() {
         return getPratosDoDiaDetalhado(LocalDate.now().getDayOfWeek());
     }
