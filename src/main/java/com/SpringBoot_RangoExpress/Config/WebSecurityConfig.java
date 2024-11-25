@@ -51,6 +51,7 @@ public class WebSecurityConfig {
                         .requestMatchers(HttpMethod.GET, "/user/getUser").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/cardapio/hoje").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/cardapio/dia/**").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/api/pedido/**").permitAll()
 
 
                         .requestMatchers("/h2-console/**").permitAll()
