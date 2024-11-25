@@ -33,7 +33,7 @@ public class PedidoController {
         }
     }
 
-    @GetMapping
+    @GetMapping("/list")
     public ResponseEntity<List<Pedido>> getAllPedidos() {
         List<Pedido> pedidos = pedidoService.findAllPedidos();
         return ResponseEntity.ok(pedidos);
