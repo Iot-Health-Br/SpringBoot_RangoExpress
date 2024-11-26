@@ -1,6 +1,6 @@
 # Rango Express 
 
-   Este repositório se destina ao sistema Rango Express criado para gerenciamento de pedidos de marmitas, controlando o cadastro de usuários e seus pedidos, rotas de destino e controle financeiro. 
+   Este repositório se destina ao sistema Rango Express criado parahh gerenciamento de pedidos de marmitas, controlando o cadastro de usuários e seus pedidos, rotas de destino e controle financeiro. 
 
    Trata-se de um programa desenvolvido para aplicação WEB, utilizando o framework SpringBoot no back-end em conjunto com o framework Angular no front-end, o código foi criado na arquitetura monolitica que utiliza a estrutura model view control (MVC). 
 
