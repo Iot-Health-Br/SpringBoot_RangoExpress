@@ -22,15 +22,15 @@ public class UserService {
     private UserRepository userRepository;
 
     public Optional<User> findByUsername(String username) {
-        return userRepository.findByUsername(username);
+        return userRepository.findByCpf(username);
     }
 
     public String save(User user) throws UserWasRegistred {
-        Optional<User> foundUser = userRepository.findByUsername(
-                user.getUsername()
+        Optional<User> foundUser = userRepository.findByCpf(
+                user.getCpf()
         );
         if (foundUser.isPresent()) {
-            throw new UserWasRegistred("Username já cadastrado!");}
+            throw new UserWasRegistred("CPF já cadastrado!");}
         else {
             user.setRoles(Collections.singletonList("USER"));
             userRepository.save(user);
@@ -38,11 +38,11 @@ public class UserService {
     }
 
     public String saveAdm(User user) throws UserWasRegistred {
-        Optional<User> foundUser = userRepository.findByUsername(
-                user.getUsername()
+        Optional<User> foundUser = userRepository.findByCpf(
+                user.getCpf()
         );
         if (foundUser.isPresent()) {
-            throw new UserWasRegistred("Username já cadastrado!");}
+            throw new UserWasRegistred("CPF já cadastrado!");}
         else {
             userRepository.save(user);
             return "Adm cadastrado com sucesso!";}
@@ -50,12 +50,12 @@ public class UserService {
 
 
     public LoginResponse findByUsernameAndPassword(User user) {
-        System.out.println("Login Recebido Service: " + user.getUsername());
+        System.out.println("Login Recebido Service: " + user.getCpf());
         System.out.println("A Senha Recebida Service: " + user.getPassword());
         //user.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));
         try {
-            Optional<User> foundUser = userRepository.findByUsernameAndPassword(
-                    user.getUsername(),
+            Optional<User> foundUser = userRepository.findByCpfAndPassword(
+                    user.getCpf(),
                     user.getPassword()
             );
 
@@ -66,15 +66,21 @@ public class UserService {
                 return new LoginResponse(
                         true,
                         "Usuário autenticado com sucesso",
-                        authenticatedUser.getUsername(),
+                        authenticatedUser.getCpf(),
                         authenticatedUser.getRoles(), // Agora retornamos a lista de roles
                         authenticatedUser.getId(),        // Novo campo
-                        authenticatedUser.getNome()   // Novo campo
+                        authenticatedUser.getNome(),   // Novo campo
+                        authenticatedUser.getEndereco(),
+                        authenticatedUser.getLatitude(),
+                        authenticatedUser.getLongitude()
                 );
             } else {
                 return new LoginResponse(
                         false,
                         "Usuário ou senha inválidos",
+                        null,
+                        null,
+                        null,
                         null,
                         null,
                         null,
@@ -85,6 +91,9 @@ public class UserService {
             return new LoginResponse(
                     false,
                     "Erro ao processar a autenticação: " + e.getMessage(),
+                    null,
+                    null,
+                    null,
                     null,
                     null,
                     null,
