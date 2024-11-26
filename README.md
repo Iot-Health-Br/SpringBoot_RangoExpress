@@ -1,4 +1,4 @@
-Teste
+
 
 <img src="https://github.com/Iot-Health-Br/SpringBoot_RangoExpress/blob/Master/Logo%20Imagens/RangoExpress.jpeg?raw=true" width="200" height="200"> 
 
