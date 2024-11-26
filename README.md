@@ -85,7 +85,7 @@ Depois de fazer o fork, você precisará clonar o repositório para sua máquina
 
    * **Desenvolvedor** - *Trabalho Inicial* / *Documentação* - [Igor Leonor Macedo](https://github.com/Iot-Health-Br)
    * **Desenvolvedor** - *Trabalho Inicial* / *Documentação* - [Luidy Tavares](https://github.com/LuidyTT)
-   * **Desenvolvedor** - *Trabalho Inicial* / *Documentação* - [Kauan]()
+   * **Desenvolvedor** - *Trabalho Inicial* / *Documentação* - [Kauan Farias Lima]()
      
 
 
