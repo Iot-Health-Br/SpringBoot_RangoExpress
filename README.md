@@ -1,8 +1,10 @@
+Teste
+
 <img src="https://github.com/Iot-Health-Br/SpringBoot_RangoExpress/blob/Master/Logo%20Imagens/RangoExpress.jpeg?raw=true" width="200" height="200"> 
 
 # Rango Express 
 
-   Este repositório se destina ao sistema Rango Express criado para gerenciamento de pedidos de marmitas, controlando o cadastro de usuários e seus pedidos, rotas de destino e controle financeiro. 
+   Este repositório se destina ao sistema Rango Express criado parahh gerenciamento de pedidos de marmitas, controlando o cadastro de usuários e seus pedidos, rotas de destino e controle financeiro. 
 
    Trata-se de um programa desenvolvido para aplicação WEB, utilizando o framework SpringBoot no back-end em conjunto com o framework Angular no front-end, o código foi criado na arquitetura monolitica que utiliza a estrutura model view control (MVC). 
 
@@ -87,7 +89,7 @@ Depois de fazer o fork, você precisará clonar o repositório para sua máquina
 
    * **Desenvolvedor** - *Trabalho Inicial* / *Documentação* - [Igor Leonor Macedo](https://github.com/Iot-Health-Br)
    * **Desenvolvedor** - *Trabalho Inicial* / *Documentação* - [Luidy Tavares](https://github.com/LuidyTT)
-   * **Desenvolvedor** - *Trabalho Inicial* / *Documentação* - [Kauan]()
+   * **Desenvolvedor** - *Trabalho Inicial* / *Documentação* - [Kauan Farias Lima]()
      
 
 
