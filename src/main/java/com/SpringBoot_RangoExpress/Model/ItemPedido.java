@@ -16,7 +16,7 @@ import java.util.List;
 public class ItemPedido {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long idPrato;
 
     private String nome;
 
