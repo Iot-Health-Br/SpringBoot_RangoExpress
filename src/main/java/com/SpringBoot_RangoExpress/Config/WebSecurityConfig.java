@@ -55,11 +55,12 @@ public class WebSecurityConfig {
 
 
                         .requestMatchers("/h2-console/**").permitAll()
-                        .requestMatchers(URL + "api/user").hasAnyRole("USER", "ADM")
+                        .requestMatchers("/swagger-ui/index.html/**").permitAll()
+
+                        .requestMatchers(URL + "api/user/**").hasAnyRole("USER", "ADM")
                         .requestMatchers(URL + "/adm").hasAnyRole("ADM")
                         .requestMatchers(URL + "/cardapio/**").hasAnyRole("USER", "ADM")
                         .requestMatchers(URL + "/pedido/**").hasAnyRole("USER", "ADM")
-                        //.requestMatchers("/api/cardapio/**").hasAnyRole("USER", "ADM")
                         .anyRequest().authenticated())
                 .headers(headers -> headers
                         .frameOptions(frame -> frame.sameOrigin()));
