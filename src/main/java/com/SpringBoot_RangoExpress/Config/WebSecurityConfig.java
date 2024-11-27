@@ -53,13 +53,16 @@ public class WebSecurityConfig {
                         .requestMatchers(HttpMethod.GET, "/api/cardapio/dia/**").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/pedido/**").permitAll()
 
+                        // Swagger UI
+                        .requestMatchers("/v3/api-docs/**").permitAll()
+                        .requestMatchers("/swagger-ui/**").permitAll()
+                        .requestMatchers("/swagger-resources/**").permitAll()
+                        .requestMatchers("/webjars/**").permitAll()
 
-                        .requestMatchers("/h2-console/**").permitAll()
-                        .requestMatchers(URL + "api/user").hasAnyRole("USER", "ADM")
+                        .requestMatchers(URL + "api/user/**").hasAnyRole("USER", "ADM")
                         .requestMatchers(URL + "/adm").hasAnyRole("ADM")
                         .requestMatchers(URL + "/cardapio/**").hasAnyRole("USER", "ADM")
                         .requestMatchers(URL + "/pedido/**").hasAnyRole("USER", "ADM")
-                        //.requestMatchers("/api/cardapio/**").hasAnyRole("USER", "ADM")
                         .anyRequest().authenticated())
                 .headers(headers -> headers
                         .frameOptions(frame -> frame.sameOrigin()));
