@@ -10,9 +10,32 @@
   O Rango Express é uma aplicação web para o gerenciamento eficiente de pedidos de marmitas. Ele centraliza o controle de cadastro de usuários, gerenciamento de pedidos, planejamento de rotas de entrega e controle financeiro.
   
   O projeto foi desenvolvido com Spring Boot no back-end e Angular no front-end, seguindo a arquitetura monolítica e o padrão Model-View-Controller (MVC). Seu objetivo principal é oferecer uma solução prática, escalável e segura para empresas do ramo alimentício.
+  
+
+### 🌐 Estrutura do Projeto
+
+  O projeto é dividido nas seguintes camadas:
+
+1. Back-End
+Framework: Spring Boot
+Linguagem: Java
+Funções principais:
+Autenticação e autorização de usuários (Spring Security).
+Gerenciamento de pedidos e controle financeiro.
+Comunicação com o banco de dados (PostgreSQL).
+Algoritmos para otimização de rotas de entrega.
+
+2. Front-End
+Framework: Angular
+Biblioteca de UI: PrimeNG
+Funções principais:
+Interface intuitiva para cadastro e gerenciamento de pedidos.
+Visualização de rotas e relatórios financeiros.
+Responsividade para uso em diferentes dispositivos.
+
 
     
-## 🚀 Começando
+### 🚀 Começando
 
   Estas instruções ajudam a configurar o projeto para desenvolvimento e teste em sua máquina local.
   Para saber como implantar em produção, consulte a seção Implantação.
@@ -45,8 +68,7 @@
 
   
 ## ⚙️ Instale as dependências do Front-End:
-  ´´´bash
-     
+  
     cd frontend/
     npm install
     
@@ -59,36 +81,15 @@
 
    
   2. Inicie o front-end:
-     ´´´bash
      
     cd frontend/
     npm start
     
 Agora, acesse a aplicação no navegador em http://localhost:4200.
 
-## ⚙️ Testes
- 
-1. Testes Unitários
-Cada função do back-end foi testada para garantir consistência nos cálculos de rotas, pedidos e relatórios.
-
-2. Testes de Integração
-Verificações completas para assegurar a comunicação entre o back-end e o front-end.
-
-3. Testes de Desempenho
-Avaliação do tempo de resposta para rotas grandes e pequenas.
 
 
-
-   
-  2. Inicie o front-end:
-     ´´´bash
-     
-    cd frontend/
-    npm start
-    
-Agora, acesse a aplicação no navegador em http://localhost:4200.
-
-## ⚙️ Testes
+## 💻 Testes
  
 1. Testes Unitários
 Cada função do back-end foi testada para garantir consistência nos cálculos de rotas, pedidos e relatórios.
@@ -101,7 +102,6 @@ Avaliação do tempo de resposta para rotas grandes e pequenas.
 
 
 Para rodar os testes, use os comandos abaixo:
- ´´´bash
      
    # Para back-end:
      mvn test
@@ -146,7 +146,7 @@ Depois de fazer o fork, você precisará clonar o repositório para sua máquina
 
    Nós usamos [GIT](https://git-scm.com/) para controle de versão. Para as versões disponíveis, observe as [tags neste repositório](). 
 
-## ✒️ Autores
+## ✨ Autores
 
    * **Desenvolvedor** - *Trabalho Inicial* / *Documentação* - [Igor Leonor Macedo](https://github.com/Iot-Health-Br)
    * **Desenvolvedor** - *Trabalho Inicial* / *Documentação* - [Luidy Tavares](https://github.com/LuidyTT)
