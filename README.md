@@ -1,6 +1,9 @@
-![atencao](https://github.com/user-attachments/assets/9038d698-f133-4eb3-8e8f-d5a61d607d98)
 
-<img src="https://github.com/Iot-Health-Br/SpringBoot_RangoExpress/blob/Master/Logo%20Imagens/RangoExpress.jpeg?raw=true" width="200" height="200"> 
+
+![WhatsApp Image 2024-11-25 at 10 52 07 PM (1)](https://github.com/user-attachments/assets/c1f6cf59-9475-402c-b19a-b9d4cd2416c1)
+
+
+
 
 # Rango Express 
 
@@ -53,6 +56,7 @@
    Configure o arquivo application.properties com as credenciais do banco de dados.
    Execute a aplicação.
 
+
    
   2. Inicie o front-end:
      ´´´bash
@@ -72,6 +76,29 @@ Verificações completas para assegurar a comunicação entre o back-end e o fro
 
 3. Testes de Desempenho
 Avaliação do tempo de resposta para rotas grandes e pequenas.
+
+
+
+   
+  2. Inicie o front-end:
+     ´´´bash
+     
+    cd frontend/
+    npm start
+    
+Agora, acesse a aplicação no navegador em http://localhost:4200.
+
+## ⚙️ Testes
+ 
+1. Testes Unitários
+Cada função do back-end foi testada para garantir consistência nos cálculos de rotas, pedidos e relatórios.
+
+2. Testes de Integração
+Verificações completas para assegurar a comunicação entre o back-end e o front-end.
+
+3. Testes de Desempenho
+Avaliação do tempo de resposta para rotas grandes e pequenas.
+
 
 Para rodar os testes, use os comandos abaixo:
  ´´´bash
