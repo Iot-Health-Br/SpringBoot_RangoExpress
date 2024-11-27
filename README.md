@@ -16,22 +16,22 @@
 
   O projeto é dividido nas seguintes camadas:
 
-1. Back-End
-Framework: Spring Boot
-Linguagem: Java
-Funções principais:
-Autenticação e autorização de usuários (Spring Security).
-Gerenciamento de pedidos e controle financeiro.
-Comunicação com o banco de dados (PostgreSQL).
-Algoritmos para otimização de rotas de entrega.
+   1. Back-End
+   Framework: Spring Boot
+   Linguagem: Java
+   Funções principais:
+   Autenticação e autorização de usuários (Spring Security).
+  Gerenciamento de pedidos e controle financeiro.
+  Comunicação com o banco de dados (PostgreSQL).
+  Algoritmos para otimização de rotas de entrega.
 
-2. Front-End
-Framework: Angular
-Biblioteca de UI: PrimeNG
-Funções principais:
-Interface intuitiva para cadastro e gerenciamento de pedidos.
-Visualização de rotas e relatórios financeiros.
-Responsividade para uso em diferentes dispositivos.
+  2. Front-End
+  Framework: Angular
+  Biblioteca de UI: PrimeNG
+  Funções principais:
+  Interface intuitiva para cadastro e gerenciamento de pedidos.
+  Visualização de rotas e relatórios financeiros.
+  Responsividade para uso em diferentes dispositivos.
 
 
     
@@ -40,6 +40,8 @@ Responsividade para uso em diferentes dispositivos.
   Estas instruções ajudam a configurar o projeto para desenvolvimento e teste em sua máquina local.
   Para saber como implantar em produção, consulte a seção Implantação.
   Consulte **[Implantação](#-implanta%C3%A7%C3%A3o)** para saber como implantar o projeto.
+  
+  
 
 ### 📋 Pré-requisitos
 
@@ -50,6 +52,8 @@ Responsividade para uso em diferentes dispositivos.
    - PostgreSQL: Banco de dados utilizado para armazenamento.
    - Node.js e NPM: Necessários para o front-end.
    - IntelliJ IDEA ou outra IDE de sua preferência: Para desenvolvimento do back-end.
+
+     
 
 ### 🔧 Instalação
 
@@ -65,9 +69,10 @@ Responsividade para uso em diferentes dispositivos.
 
    Nesta Aplicação estamos usando o banco de dados H2 conforme o **[Construído com](#-Construído%C3%A7%C3%A3o)**   
    Execute os scripts SQL fornecidos no repositório para criar as tabelas necessárias.
+   
 
   
-## ⚙️ Instale as dependências do Front-End:
+### ⚙️ Instale as dependências do Front-End:
   
     cd frontend/
     npm install
@@ -89,15 +94,18 @@ Agora, acesse a aplicação no navegador em http://localhost:4200.
 
 
 
-## 💻 Testes
+### 💻 Testes
  
-1. Testes Unitários
+1. Testes Unitários:
+   
 Cada função do back-end foi testada para garantir consistência nos cálculos de rotas, pedidos e relatórios.
 
-2. Testes de Integração
+2. Testes de Integração:
+   
 Verificações completas para assegurar a comunicação entre o back-end e o front-end.
 
-3. Testes de Desempenho
+3. Testes de Desempenho:
+   
 Avaliação do tempo de resposta para rotas grandes e pequenas.
 
 
@@ -110,7 +118,8 @@ Para rodar os testes, use os comandos abaixo:
      ng test
 
 
-## 🛠️ Construído com
+
+### 🛠️ Construído com
 
    Ferramentas usadas para criar o projeto.
 
@@ -119,34 +128,37 @@ Para rodar os testes, use os comandos abaixo:
    * Programa criado usando a ferrameta [GIT] - https://git-scm.com/ - Versionamento
    * Programa criado usando o banco de dados [H2] -  - Banco de Dados usado
 
-## 🖇️ Colaborando
-### 1. Fazer o Fork
+     
 
-1. Na página do repositório que você deseja fazer o fork, clique no botão `Fork` no canto superior direito da página.
+### 🖇️ Colaborando
+   1. Fazer o Fork
 
-2. GitHub irá criar uma cópia do repositório em sua conta. Este processo pode levar alguns segundos.
+   1. Na página do repositório que você deseja fazer o fork, clique no botão `Fork` no canto superior direito da página.
 
-### 2. Clonar o Repositório Forkado
+   2. GitHub irá criar uma cópia do repositório em sua conta. Este processo pode levar alguns segundos.
+  
+   ### 2. Clonar o Repositório Forkado
 
-Depois de fazer o fork, você precisará clonar o repositório para sua máquina local para começar a fazer alterações.
+   Depois de fazer o fork, você precisará clonar o repositório para sua máquina local para começar a fazer alterações.
 
-1. Vá para a página do seu repositório forkado. Ele estará localizado em `https://github.com/seu-usuario/nome-do-repositorio`.
+   1. Vá para a página do seu repositório forkado. Ele estará localizado em `https://github.com/seu-usuario/nome-do-repositorio`.
 
-2. Clique no botão `Code` e copie a URL do repositório (HTTPS, SSH, ou GitHub CLI).
+   2. Clique no botão `Code` e copie a URL do repositório (HTTPS, SSH, ou GitHub CLI).
    ![Clone Button](https://docs.github.com/assets/images/help/repository/https-url-clone-cli.png)
 
-3. Abra um terminal na sua máquina local e execute o seguinte comando para clonar o repositório:
+  3. Abra um terminal na sua máquina local e execute o seguinte comando para clonar o repositório:
 
-   ```bash
-   git clone https://github.com/seu-usuario/nome-do-repositorio.git
-
+    git clone https://github.com/seu-usuario/nome-do-repositorio.git
 
 
-## 📌 Versão
+
+### 📌 Versão
 
    Nós usamos [GIT](https://git-scm.com/) para controle de versão. Para as versões disponíveis, observe as [tags neste repositório](). 
 
-## ✨ Autores
+   
+
+### ✨ Autores
 
    * **Desenvolvedor** - *Trabalho Inicial* / *Documentação* - [Igor Leonor Macedo](https://github.com/Iot-Health-Br)
    * **Desenvolvedor** - *Trabalho Inicial* / *Documentação* - [Luidy Tavares](https://github.com/LuidyTT)
@@ -154,9 +166,11 @@ Depois de fazer o fork, você precisará clonar o repositório para sua máquina
      
 
 
-## 📄 Licença
+### 📄 Licença
 
    Este projeto está sob a licença (sua licença) - veja o arquivo [LICENSE.md](https://github.com/usuario/projeto/licenca) para detalhes.
+
+   
 
 ## 🎁 Expressões de gratidão
 
