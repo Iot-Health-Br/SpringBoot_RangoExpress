@@ -1,28 +1,29 @@
 
+![WhatsApp Image 2024-11-25 at 10 52 07 PM (1)](https://github.com/user-attachments/assets/c1f6cf59-9475-402c-b19a-b9d4cd2416c1)
 
-<img src="https://github.com/Iot-Health-Br/SpringBoot_RangoExpress/blob/Master/Logo%20Imagens/RangoExpress.jpeg?raw=true" width="200" height="200"> 
 
 # Rango Express 
 
-   Este repositório se destina ao sistema Rango Express criado parahh gerenciamento de pedidos de marmitas, controlando o cadastro de usuários e seus pedidos, rotas de destino e controle financeiro. 
+  O Rango Express é uma aplicação web para o gerenciamento eficiente de pedidos de marmitas. Ele centraliza o controle de cadastro de usuários, gerenciamento de pedidos, planejamento de rotas de entrega e controle financeiro.
+  
+  O projeto foi desenvolvido com Spring Boot no back-end e Angular no front-end, seguindo a arquitetura monolítica e o padrão Model-View-Controller (MVC). Seu objetivo principal é oferecer uma solução prática, escalável e segura para empresas do ramo alimentício.
 
-   Trata-se de um programa desenvolvido para aplicação WEB, utilizando o framework SpringBoot no back-end em conjunto com o framework Angular no front-end, o código foi criado na arquitetura monolitica que utiliza a estrutura model view control (MVC). 
-
+    
 ## 🚀 Começando
 
-   Essas instruções permitirão que você obtenha uma cópia do projeto em operação na sua máquina local para fins de desenvolvimento e teste.
-
-   Consulte **[Implantação](#-implanta%C3%A7%C3%A3o)** para saber como implantar o projeto.
+  Estas instruções ajudam a configurar o projeto para desenvolvimento e teste em sua máquina local.
+  Para saber como implantar em produção, consulte a seção Implantação.
+  Consulte **[Implantação](#-implanta%C3%A7%C3%A3o)** para saber como implantar o projeto.
 
 ### 📋 Pré-requisitos
 
    Antes de iniciar, certifique-se de ter todas as ferramentas necessárias instaladas. Você precisará de:
 
-   - Pré-requisito 1 (Java JDK 20)
-   - Pré-requisito 2 (Git, Postgres)
-   - Pré-requisito 3 (Intelij JetBrains)
-   - Pré-requisito (Node.js)
-   - Pré-requisito (Npm)
+   - Java JDK 20: Ambiente para executar o back-end.
+   - Git: Controle de versão para clonar o repositório.
+   - PostgreSQL: Banco de dados utilizado para armazenamento.
+   - Node.js e NPM: Necessários para o front-end.
+   - IntelliJ IDEA ou outra IDE de sua preferência: Para desenvolvimento do back-end.
 
 ### 🔧 Instalação
 
@@ -32,23 +33,55 @@
 
    ```bash
    git clone https://github.com/Iot-Health-Br/SpringBoot_RangoExpress.git
+   
 
 2. **Crie o banco de dados:**
 
    Nesta Aplicação estamos usando o banco de dados H2 conforme o **[Construído com](#-Construído%C3%A7%C3%A3o)**   
-   Será nescessário a criação do banco de dados manualmente com o seguinte nome "xxxx".
+   Execute os scripts SQL fornecidos no repositório para criar as tabelas necessárias.
 
   
-
-
-3. **Crie um job no banco de dados:**
-
+## ⚙️ Instale as dependências do Front-End:
+  ´´´bash
+     
+    cd frontend/
+    npm install
+    
+   1. Instale as dependências do Front-End:
+      
+   Abra o projeto no IntelliJ IDEA.
+   Configure o arquivo application.properties com as credenciais do banco de dados.
+   Execute a aplicação.
 
    
+  2. Inicie o front-end:
+     ´´´bash
+     
+    cd frontend/
+    npm start
+    
+Agora, acesse a aplicação no navegador em http://localhost:4200.
 
-## ⚙️ Executando os testes unitários
+## ⚙️ Testes
+ 
+1. Testes Unitários
+Cada função do back-end foi testada para garantir consistência nos cálculos de rotas, pedidos e relatórios.
 
-   
+2. Testes de Integração
+Verificações completas para assegurar a comunicação entre o back-end e o front-end.
+
+3. Testes de Desempenho
+Avaliação do tempo de resposta para rotas grandes e pequenas.
+
+Para rodar os testes, use os comandos abaixo:
+ ´´´bash
+     
+   # Para back-end:
+     mvn test
+
+   # Para front-end:
+     ng test
+
 
 ## 🛠️ Construído com
 
@@ -81,6 +114,7 @@ Depois de fazer o fork, você precisará clonar o repositório para sua máquina
    git clone https://github.com/seu-usuario/nome-do-repositorio.git
 
 
+
 ## 📌 Versão
 
    Nós usamos [GIT](https://git-scm.com/) para controle de versão. Para as versões disponíveis, observe as [tags neste repositório](). 
@@ -89,7 +123,7 @@ Depois de fazer o fork, você precisará clonar o repositório para sua máquina
 
    * **Desenvolvedor** - *Trabalho Inicial* / *Documentação* - [Igor Leonor Macedo](https://github.com/Iot-Health-Br)
    * **Desenvolvedor** - *Trabalho Inicial* / *Documentação* - [Luidy Tavares](https://github.com/LuidyTT)
-   * **Desenvolvedor** - *Trabalho Inicial* / *Documentação* - [Kauan Farias Lima]()
+   * **Desenvolvedor** - *Trabalho Inicial* / *Documentação* - [Kauan Farias Lima](https://github.com/lKauanF)
      
 
 
