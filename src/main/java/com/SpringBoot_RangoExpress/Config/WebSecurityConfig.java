@@ -42,11 +42,14 @@ public class WebSecurityConfig {
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(authorize -> authorize
 
+                        // Permissões específicas para PUT /api/pedido/**
+                        .requestMatchers(HttpMethod.PUT, "/api/pedido/**").permitAll()
+
                         .requestMatchers(HttpMethod.POST, "/user/login").permitAll()
                         .requestMatchers(HttpMethod.POST, "/user/save").permitAll()
                         .requestMatchers(HttpMethod.POST, "/user/saveAdm").permitAll()
-                        .requestMatchers(HttpMethod.POST, "/api/pedido/pedidos").permitAll()
-
+                        //.requestMatchers(HttpMethod.POST, "/api/pedido/pedidos/**").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/api/pedido/**").permitAll()
 
                         .requestMatchers(HttpMethod.GET, "/user/getUser").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/cardapio/hoje").permitAll()
