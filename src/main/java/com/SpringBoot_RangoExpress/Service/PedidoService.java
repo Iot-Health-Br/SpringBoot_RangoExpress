@@ -1,6 +1,5 @@
 package com.SpringBoot_RangoExpress.Service;
 
-import com.SpringBoot_RangoExpress.Enum.StatusPedido;
 import com.SpringBoot_RangoExpress.Exception.OrderWasRegistred;
 import com.SpringBoot_RangoExpress.Model.Pedido;
 import com.SpringBoot_RangoExpress.Repository.PedidoRepository;
@@ -33,12 +32,10 @@ public class PedidoService {
 
     @Transactional
     public Pedido updatePedido(Long id, Pedido pedidoAtualizado) {
+        System.out.println("Service: "+pedidoAtualizado);
         return pedidoRepository.findById(id)
                 .map(pedidoExistente -> {
-                    pedidoExistente.setItens(pedidoAtualizado.getItens());
-                    pedidoExistente.setTotalPedido(pedidoAtualizado.getTotalPedido());
                     pedidoExistente.setStatus(pedidoAtualizado.getStatus());
-                    // A data do pedido original é mantida
                     return pedidoRepository.save(pedidoExistente);
                 })
                 .orElseThrow(() -> new IllegalArgumentException("Pedido não encontrado com ID: " + id));

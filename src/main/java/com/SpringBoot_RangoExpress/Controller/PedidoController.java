@@ -46,9 +46,10 @@ public class PedidoController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/update/{id}")
     public ResponseEntity<Pedido> updatePedido(@PathVariable Long id, @RequestBody Pedido pedido) {
         try {
+            System.out.println("Controller: "+pedido);
             Pedido updatedPedido = pedidoService.updatePedido(id, pedido);
             return ResponseEntity.ok(updatedPedido);
         } catch (IllegalArgumentException e) {
