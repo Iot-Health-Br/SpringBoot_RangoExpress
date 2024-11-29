@@ -4,48 +4,57 @@
 
 
 ============================================================================================
-                                                    ## 🍽️ RANGO EXPRESS ##
+## 🍽️ RANGO EXPRESS ##
 
 Bem-vindo ao Rango Express, seu sistema para facilitar o gerenciamento de pedidos de marmitas!
 
 Com este guia, vou te ensinar, passo a passo, como baixar, configurar e rodar o Rango Express. Seja você iniciante ou expert!
 O Rango Express é um sistema web para facilitar o gerenciamento de pedidos de marmitas! Com ele, você pode:
+
 ✅ Cadastrar usuários e pedidos.
+
 ✅ Gerenciar rotas de entrega.
 
 Seja para uso pessoal ou comercial.
 
 ============================================================================================
   
-#🎯 OO QUE VOCÊ VAI APRENDER AQUI?
+## 🎯 O QUE VOCÊ VAI APRENDER AQUI? ##
 
-Como instalar a aplicação na sua máquina.
-Quais ferramentas você precisa para tudo funcionar.
-Como configurar Angular e PrimeNG corretamente.
-Como fazer um fork e colaborar com o projeto.
+- Como instalar a aplicação na sua máquina.
+
+- Quais ferramentas você precisa para tudo funcionar.
+
+- Como configurar Angular e PrimeNG corretamente.
+
+- Como fazer um fork e colaborar com o projeto.
 
 ============================================================================================  
-#🚀 iNSTALANDO O RANGO EXPRESS
+## 🚀 INSTALANDO O RANGO EXPRESS ##
 
 📋 Pré-requisitos
 
-Antes de começar, certifique-se de ter estas ferramentas instaladas:
+- Antes de começar, certifique-se de ter estas ferramentas instaladas:
 
-Java JDK 17 – Necessário para rodar o backend.
-Node.js e npm – Para gerenciar o frontend.
-Git – Para clonar o projeto e colaborar.
-PostgreSQL – Banco de dados para armazenar os dados.
-IntelliJ IDEA – (ou sua IDE favorita).
+- Java JDK ( Versão 17) – Necessário para rodar o backend.
+
+- Node.js e npm – Para gerenciar o frontend.
+
+- Git – Para clonar o projeto e colaborar. - https://git-scm.com/ - 
+
+- H2 – Banco de dados para armazenar os dados.
+
+- IntelliJ IDEA – (ou sua IDE favorita). - https://www.jetbrains.com/pt-br/idea/ - 
 
 ============================================================================================
     
-#🔧 PASSO A PASSO PARA CONFIGURAR E INSTALAR.
+## 🔧 PASSO A PASSO PARA CONFIGURAR E INSTALAR. ##
 
 1º Passo: Clonando o repositório
 Abra o terminal e execute os comandos:
 
     git clone https://github.com/Iot-Health-Br/SpringBoot_RangoExpress.git
- cd SpringBoot_RangoExpress
+    cd SpringBoot_RangoExpress
  
 2º Passo: Configurando o Angular CLI
 O frontend do Rango Express usa Angular, então precisamos configurar o ambiente:
@@ -96,7 +105,7 @@ Compile o projeto:
     ./mvnw clean install
 Configure o banco de dados:
 
-Crie um banco chamado rango_express no PostgreSQL.
+Crie um banco chamado rango_express no H2.
 Atualize o arquivo application.properties com as credenciais do banco.
 Inicie o backend:
 
@@ -117,7 +126,7 @@ Pronto! 🎉 Acesse a aplicação em http://localhost:4200.
 
 ============================================================================================
 
-#🍴 COMO FAZER O FORK
+## 🍴 COMO FAZER O FORK ##
 
 Faça o fork do repositório:
 Na página do projeto no GitHub, clique em Fork.
@@ -144,47 +153,44 @@ Vá até o repositório original e clique em New Pull Request.
 
 ============================================================================================
 
-#🛠️ Ferramentas usadas no projeto
-Backend:
+## 🛠️ FERRAMENTAS USADAS NO PROJETO ##
 
-💻 Spring Boot – Framework para APIs. 
+- Backend:
+
+💻 Spring Boot – Framework para APIs. - https://spring.io/ -
+
 🔒 Spring Security – Autenticação.
-Frontend:
+
+- Frontend:
 
 🖼️ Angular – Interface moderna.
+
 🎨 PrimeNG – Componentes visuais.
-Banco de Dados:
+
+- Banco de Dados:
 
 🛢️ H2 – Banco relacional.
-Versionamento:
 
-🧰 Git – Controle de versões.
+- Versionamento:
 
-============================================================================================
+🧰 Git – Controle de versões. - https://git-scm.com/ -
 
-# 🛠️ Construído com
-
-   Ferramentas usadas para criar o projeto.
-
-   * Programa criado usando a ferrameta [Intelij] - https://www.jetbrains.com/pt-br/idea/ - IDE usada
-   * Programa criado usando o framework [Spring Boot] - https://spring.io/ - Framework usado
-   * Programa criado usando a ferrameta [GIT] - https://git-scm.com/ - Versionamento
-   * Programa criado usando o banco de dados [H2] -  - Banco de Dados usado
 ============================================================================================
    
-# ✨ Autores
+## ✨ AUTORES ##
 
    * **Desenvolvedor** - *Trabalho Inicial* / *Documentação* - [Igor Leonor Macedo](https://github.com/Iot-Health-Br)
    * **Desenvolvedor** - *Trabalho Inicial* / *Documentação* - [Luidy Tavares](https://github.com/LuidyTT)
    * **Desenvolvedor** - *Trabalho Inicial* / *Documentação* - [Kauan Farias Lima](https://github.com/lKauanF)
-   * 
+     
 ============================================================================================
-#🎁 Agradecimentos
+## 🎁 AGRADECIMENTOS ##
 
 Obrigado por conferir este projeto! 💖
 Se achou útil:
 
 Deixe uma ⭐ no repositório.
+
 Compartilhe 🍺 com seus amigos.
 
 ============================================================================================
