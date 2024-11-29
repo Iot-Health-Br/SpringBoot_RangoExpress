@@ -3,9 +3,10 @@
 ![WhatsApp Image 2024-11-25 at 10 52 07 PM (1)](https://github.com/user-attachments/assets/c1f6cf59-9475-402c-b19a-b9d4cd2416c1)
 
 
-===================================================================================================================================================================================================================
+============================================================================================
 
 #🍽️ RANGO EXPRESS
+
 Bem-vindo ao Rango Express, seu sistema para facilitar o gerenciamento de pedidos de marmitas!
 
 Com este guia, vou te ensinar, passo a passo, como baixar, configurar e rodar o Rango Express. Seja você iniciante ou expert!
@@ -15,17 +16,20 @@ O Rango Express é um sistema web para facilitar o gerenciamento de pedidos de m
 
 Seja para uso pessoal ou comercial.
 
-===================================================================================================================================================================================================================
+============================================================================================
   
 #🎯 OO QUE VOCÊ VAI APRENDER AQUI?
+
 Como instalar a aplicação na sua máquina.
 Quais ferramentas você precisa para tudo funcionar.
 Como configurar Angular e PrimeNG corretamente.
 Como fazer um fork e colaborar com o projeto.
 
-===================================================================================================================================================================================================================  
+============================================================================================  
 #🚀 iNSTALANDO O RANGO EXPRESS
+
 📋 Pré-requisitos
+
 Antes de começar, certifique-se de ter estas ferramentas instaladas:
 
 Java JDK 17 – Necessário para rodar o backend.
@@ -34,9 +38,10 @@ Git – Para clonar o projeto e colaborar.
 PostgreSQL – Banco de dados para armazenar os dados.
 IntelliJ IDEA – (ou sua IDE favorita).
 
-===================================================================================================================================================================================================================
+============================================================================================
     
 #🔧 PASSO A PASSO PARA CONFIGURAR E INSTALAR.
+
 1º Passo: Clonando o repositório
 Abra o terminal e execute os comandos:
 
@@ -111,9 +116,10 @@ Inicie o servidor:
     npm start
 Pronto! 🎉 Acesse a aplicação em http://localhost:4200.
 
-===================================================================================================================================================================================================================
+============================================================================================
 
 #🍴 COMO FAZER O FORK
+
 Faça o fork do repositório:
 Na página do projeto no GitHub, clique em Fork.
 
@@ -137,7 +143,7 @@ Envie suas mudanças para o repositório:
 Abra um Pull Request:
 Vá até o repositório original e clique em New Pull Request.
 
-===================================================================================================================================================================================================================
+============================================================================================
 
 #🛠️ Ferramentas usadas no projeto
 Backend:
@@ -155,9 +161,9 @@ Versionamento:
 
 🧰 Git – Controle de versões.
 
-===================================================================================================================================================================================================================
+============================================================================================
 
-### 🛠️ Construído com
+# 🛠️ Construído com
 
    Ferramentas usadas para criar o projeto.
 
@@ -165,7 +171,7 @@ Versionamento:
    * Programa criado usando o framework [Spring Boot] - https://spring.io/ - Framework usado
    * Programa criado usando a ferrameta [GIT] - https://git-scm.com/ - Versionamento
    * Programa criado usando o banco de dados [H2] -  - Banco de Dados usado
-===================================================================================================================================================================================================================
+============================================================================================
    
 # ✨ Autores
 
@@ -173,16 +179,13 @@ Versionamento:
    * **Desenvolvedor** - *Trabalho Inicial* / *Documentação* - [Luidy Tavares](https://github.com/LuidyTT)
    * **Desenvolvedor** - *Trabalho Inicial* / *Documentação* - [Kauan Farias Lima](https://github.com/lKauanF)
    * 
-===================================================================================================================================================================================================================
-
+============================================================================================
 #🎁 Agradecimentos
+
 Obrigado por conferir este projeto! 💖
 Se achou útil:
 
 Deixe uma ⭐ no repositório.
 Compartilhe 🍺 com seus amigos.
 
-===================================================================================================================================================================================================================
-
-  
- 
+============================================================================================
