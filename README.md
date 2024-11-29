@@ -4,8 +4,7 @@
 
 
 ============================================================================================
-
-###🍽️ RANGO EXPRESS
+                                                    ## 🍽️ RANGO EXPRESS ##
 
 Bem-vindo ao Rango Express, seu sistema para facilitar o gerenciamento de pedidos de marmitas!
 
