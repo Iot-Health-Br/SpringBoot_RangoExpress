@@ -1,5 +1,6 @@
 package com.SpringBoot_RangoExpress.Service;
 
+import com.SpringBoot_RangoExpress.Enum.LojaLocalização;
 import com.SpringBoot_RangoExpress.Enum.StatusPedido;
 import com.SpringBoot_RangoExpress.Exception.OrderWasRegistred;
 import com.SpringBoot_RangoExpress.Model.Pedido;
@@ -16,6 +17,8 @@ public class PedidoService {
     @Autowired
     private PedidoRepository pedidoRepository;
 
+    private static final double RAIO_TERRA_KM = 6371.0;
+
     ///////// ********** C.R.U.D ********** ////////////
 
     public String savePedido(Pedido pedido)throws OrderWasRegistred {
@@ -25,10 +28,6 @@ public class PedidoService {
 
     public List<Pedido> findAllPedidos() {
         return pedidoRepository.findAll();
-    }
-
-    public List<Pedido> findAllDelivery() {
-        return pedidoRepository.findByStatus(StatusPedido.valueOf("PRONTO"));
     }
 
     public Optional<Pedido> findPedidoById(Long id) {
@@ -52,4 +51,26 @@ public class PedidoService {
         }
         pedidoRepository.deleteById(id);
     }
+
+    /// ///////////////////////////////////////////////
+
+    public List<Pedido> findAllDelivery() {
+        List<Pedido> pedidosProntos = pedidoRepository.findByStatus(StatusPedido.PRONTO);
+
+        DeliveryRouteOptimizer.OptimizedRoute optimizedRoute =
+                DeliveryRouteOptimizer.optimizeRoute(
+                        pedidosProntos,
+                        LojaLocalização.getLatitude(),
+                        LojaLocalização.getLongitude()
+                );
+
+        // Você pode acessar as informações de tempo estimado assim:
+        optimizedRoute.getEstimatedDeliveryTimes().forEach((pedidoId, tempoEstimado) -> {
+            System.out.printf("Pedido %d: Tempo estimado de entrega: %d minutos%n",
+                    pedidoId, tempoEstimado.toMinutes());
+        });
+
+        return optimizedRoute.getRoute();
+    }
+
 }

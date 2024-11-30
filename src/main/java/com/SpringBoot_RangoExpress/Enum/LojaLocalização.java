@@ -8,6 +8,21 @@ public enum LojaLocalização {
     LATITUDE("-16.696775"),
     LONGITUDE("-49.269386");
 
-    LojaLocalização(String s) {
+    private final String valor;
+
+    LojaLocalização(String valor) {
+        this.valor = valor;
+    }
+
+    public String getValor() {
+        return valor;
+    }
+
+    public static double getLatitude() {
+        return Double.parseDouble(LATITUDE.valor);
+    }
+
+    public static double getLongitude() {
+        return Double.parseDouble(LONGITUDE.valor);
     }
 }
