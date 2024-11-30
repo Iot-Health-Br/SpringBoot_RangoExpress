@@ -3,6 +3,7 @@ package com.SpringBoot_RangoExpress.Controller;
 
 import com.SpringBoot_RangoExpress.Exception.OrderWasRegistred;
 import com.SpringBoot_RangoExpress.Model.Pedido;
+import com.SpringBoot_RangoExpress.Model.PedidoComTempoEstimado;
 import com.SpringBoot_RangoExpress.Service.PedidoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -40,8 +41,8 @@ public class PedidoController {
     }
 
     @GetMapping("/list/delivery")
-    public ResponseEntity<List<Pedido>> getAllDelivery() {
-        List<Pedido> pedidos = pedidoService.findAllDelivery();
+    public ResponseEntity<List<PedidoComTempoEstimado>> getAllDelivery() {
+        List<PedidoComTempoEstimado> pedidos = pedidoService.findAllDelivery();
         return ResponseEntity.ok(pedidos);
     }
 

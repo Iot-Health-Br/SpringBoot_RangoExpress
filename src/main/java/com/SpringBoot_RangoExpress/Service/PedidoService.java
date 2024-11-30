@@ -4,6 +4,7 @@ import com.SpringBoot_RangoExpress.Enum.LojaLocalização;
 import com.SpringBoot_RangoExpress.Enum.StatusPedido;
 import com.SpringBoot_RangoExpress.Exception.OrderWasRegistred;
 import com.SpringBoot_RangoExpress.Model.Pedido;
+import com.SpringBoot_RangoExpress.Model.PedidoComTempoEstimado;
 import com.SpringBoot_RangoExpress.Repository.PedidoRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,23 +55,14 @@ public class PedidoService {
 
     /// ///////////////////////////////////////////////
 
-    public List<Pedido> findAllDelivery() {
+    public List<PedidoComTempoEstimado> findAllDelivery() {
         List<Pedido> pedidosProntos = pedidoRepository.findByStatus(StatusPedido.PRONTO);
 
-        DeliveryRouteOptimizer.OptimizedRoute optimizedRoute =
-                DeliveryRouteOptimizer.optimizeRoute(
-                        pedidosProntos,
-                        LojaLocalização.getLatitude(),
-                        LojaLocalização.getLongitude()
-                );
-
-        // Você pode acessar as informações de tempo estimado assim:
-        optimizedRoute.getEstimatedDeliveryTimes().forEach((pedidoId, tempoEstimado) -> {
-            System.out.printf("Pedido %d: Tempo estimado de entrega: %d minutos%n",
-                    pedidoId, tempoEstimado.toMinutes());
-        });
-
-        return optimizedRoute.getRoute();
+        return com.SpringBoot_RangoExpress.Service.DeliveryRouteOptimizer.optimizeDeliveryRoute(
+                pedidosProntos,
+                LojaLocalização.getLatitude(),
+                LojaLocalização.getLongitude()
+        );
     }
 
 }
