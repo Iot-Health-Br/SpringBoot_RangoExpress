@@ -133,7 +133,7 @@ Na página do projeto no GitHub, clique em Fork.
 
 Clone o repositório forkado:
 
-    git clone https://github.com/seu-usuario/SpringBoot_RangoExpress.git
+    (https://github.com/Iot-Health-Br/SpringBoot_RangoExpress/fork)
     cd SpringBoot_RangoExpress
     
 Crie uma branch para sua feature:
