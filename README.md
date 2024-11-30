@@ -183,7 +183,7 @@ Vá até o repositório original e clique em New Pull Request.
    * **Desenvolvedor** - *Trabalho Inicial* / *Documentação* - [Luidy Tavares](https://github.com/LuidyTT)
    * **Desenvolvedor** - *Trabalho Inicial* / *Documentação* - [Kauan Farias Lima](https://github.com/lKauanF)
      
-============================================================================================
+===========================================================================
 ## 🎁 AGRADECIMENTOS ##
 
 Obrigado por conferir este projeto! 💖
@@ -193,4 +193,4 @@ Se achou útil:
 
 - Compartilhe 🍺 com seus amigos.
 
-============================================================================================
+===========================================================================
