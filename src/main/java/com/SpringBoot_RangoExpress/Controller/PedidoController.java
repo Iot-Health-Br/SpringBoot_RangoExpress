@@ -39,6 +39,12 @@ public class PedidoController {
         return ResponseEntity.ok(pedidos);
     }
 
+    @GetMapping("/list/delivery")
+    public ResponseEntity<List<Pedido>> getAllDelivery() {
+        List<Pedido> pedidos = pedidoService.findAllDelivery();
+        return ResponseEntity.ok(pedidos);
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<Pedido> getPedidoById(@PathVariable Long id) {
         return pedidoService.findPedidoById(id)
