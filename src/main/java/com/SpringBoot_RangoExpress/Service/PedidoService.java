@@ -1,5 +1,6 @@
 package com.SpringBoot_RangoExpress.Service;
 
+import com.SpringBoot_RangoExpress.Enum.StatusPedido;
 import com.SpringBoot_RangoExpress.Exception.OrderWasRegistred;
 import com.SpringBoot_RangoExpress.Model.Pedido;
 import com.SpringBoot_RangoExpress.Repository.PedidoRepository;
@@ -24,6 +25,10 @@ public class PedidoService {
 
     public List<Pedido> findAllPedidos() {
         return pedidoRepository.findAll();
+    }
+
+    public List<Pedido> findAllDelivery() {
+        return pedidoRepository.findByStatus(StatusPedido.valueOf("PRONTO"));
     }
 
     public Optional<Pedido> findPedidoById(Long id) {

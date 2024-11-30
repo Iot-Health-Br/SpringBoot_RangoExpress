@@ -48,7 +48,6 @@ public class WebSecurityConfig {
                         .requestMatchers(HttpMethod.POST, "/user/login").permitAll()
                         .requestMatchers(HttpMethod.POST, "/user/save").permitAll()
                         .requestMatchers(HttpMethod.POST, "/user/saveAdm").permitAll()
-                        //.requestMatchers(HttpMethod.POST, "/api/pedido/pedidos/**").permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/pedido/**").permitAll()
 
                         .requestMatchers(HttpMethod.GET, "/user/getUser").permitAll()
@@ -61,6 +60,9 @@ public class WebSecurityConfig {
                         .requestMatchers("/swagger-ui/**").permitAll()
                         .requestMatchers("/swagger-resources/**").permitAll()
                         .requestMatchers("/webjars/**").permitAll()
+
+                        // Banco de Dados H2
+                        .requestMatchers("/h2-console/**").permitAll()
 
                         .requestMatchers(URL + "api/user/**").hasAnyRole("USER", "ADM")
                         .requestMatchers(URL + "/adm").hasAnyRole("ADM")
