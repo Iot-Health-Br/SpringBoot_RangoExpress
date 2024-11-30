@@ -34,15 +34,15 @@ Seja para uso pessoal ou comercial.
 
 📋 Pré-requisitos
 
-- Antes de começar, certifique-se de ter estas ferramentas instaladas:
+ Antes de começar, certifique-se de ter estas ferramentas instaladas:
 
-- Java JDK ( Versão 17) – Necessário para rodar o backend.
+- Java JDK ( Versão 17) – Necessário para rodar o backend. -https://www.oracle.com/java/technologies/downloads/ -
 
-- Node.js e npm – Para gerenciar o frontend.
+- Node.js e npm – Para gerenciar o frontend. - https://nodejs.org/pt -
 
 - Git – Para clonar o projeto e colaborar. - https://git-scm.com/ - 
 
-- H2 – Banco de dados para armazenar os dados.
+- H2 – Banco de dados para armazenar os dados. - https://h2database.com/html/main.html -
 
 - IntelliJ IDEA – (ou sua IDE favorita). - https://www.jetbrains.com/pt-br/idea/ - 
 
@@ -159,17 +159,17 @@ Vá até o repositório original e clique em New Pull Request.
 
 💻 Spring Boot – Framework para APIs. - https://spring.io/ -
 
-🔒 Spring Security – Autenticação.
+🔒 Spring Security – Autenticação. - https://spring.io/projects/spring-security -
 
 - Frontend:
 
-🖼️ Angular – Interface moderna.
+🖼️ Angular – Interface moderna. - https://angular.dev/installation -
 
-🎨 PrimeNG – Componentes visuais.
+🎨 PrimeNG – Componentes visuais. - https://primeng.org/ -
 
 - Banco de Dados:
 
-🛢️ H2 – Banco relacional.
+🛢️ H2 – Banco relacional. - https://h2database.com/html/main.html -
 
 - Versionamento:
 
@@ -189,8 +189,8 @@ Vá até o repositório original e clique em New Pull Request.
 Obrigado por conferir este projeto! 💖
 Se achou útil:
 
-Deixe uma ⭐ no repositório.
+- Deixe uma ⭐ no repositório.
 
-Compartilhe 🍺 com seus amigos.
+- Compartilhe 🍺 com seus amigos.
 
 ============================================================================================
