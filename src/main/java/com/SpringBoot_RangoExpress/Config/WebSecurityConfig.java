@@ -42,24 +42,32 @@ public class WebSecurityConfig {
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(authorize -> authorize
 
+                        // Permissões específicas para PUT /api/pedido/**
+                        .requestMatchers(HttpMethod.PUT, "/api/pedido/**").permitAll()
+
                         .requestMatchers(HttpMethod.POST, "/user/login").permitAll()
                         .requestMatchers(HttpMethod.POST, "/user/save").permitAll()
                         .requestMatchers(HttpMethod.POST, "/user/saveAdm").permitAll()
-                        .requestMatchers(HttpMethod.POST, "/api/pedido/pedidos").permitAll()
-
+                        .requestMatchers(HttpMethod.POST, "/api/pedido/**").permitAll()
 
                         .requestMatchers(HttpMethod.GET, "/user/getUser").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/cardapio/hoje").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/cardapio/dia/**").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/pedido/**").permitAll()
 
+                        // Swagger UI
+                        .requestMatchers("/v3/api-docs/**").permitAll()
+                        .requestMatchers("/swagger-ui/**").permitAll()
+                        .requestMatchers("/swagger-resources/**").permitAll()
+                        .requestMatchers("/webjars/**").permitAll()
 
+                        // Banco de Dados H2
                         .requestMatchers("/h2-console/**").permitAll()
-                        .requestMatchers(URL + "api/user").hasAnyRole("USER", "ADM")
+
+                        .requestMatchers(URL + "api/user/**").hasAnyRole("USER", "ADM")
                         .requestMatchers(URL + "/adm").hasAnyRole("ADM")
                         .requestMatchers(URL + "/cardapio/**").hasAnyRole("USER", "ADM")
                         .requestMatchers(URL + "/pedido/**").hasAnyRole("USER", "ADM")
-                        //.requestMatchers("/api/cardapio/**").hasAnyRole("USER", "ADM")
                         .anyRequest().authenticated())
                 .headers(headers -> headers
                         .frameOptions(frame -> frame.sameOrigin()));

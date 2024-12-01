@@ -12,8 +12,8 @@ import java.util.List;
 public class UserDetailsDTO {
     @Id
     private Long id;
-    private Long username;
     private String nome;
+    private String cpf;
     @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "ENG_ROLE", joinColumns = @JoinColumn(name = "id"))
     @Column(name = "role_id")

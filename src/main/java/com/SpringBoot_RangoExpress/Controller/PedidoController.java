@@ -3,6 +3,7 @@ package com.SpringBoot_RangoExpress.Controller;
 
 import com.SpringBoot_RangoExpress.Exception.OrderWasRegistred;
 import com.SpringBoot_RangoExpress.Model.Pedido;
+import com.SpringBoot_RangoExpress.Model.PedidoComTempoEstimado;
 import com.SpringBoot_RangoExpress.Service.PedidoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -34,21 +35,49 @@ public class PedidoController {
     }
 
     @GetMapping("/list")
-    public ResponseEntity<List<Pedido>> getAllPedidos() {
+    public ResponseEntity<List<Pedido>> getAllOrder() {
         List<Pedido> pedidos = pedidoService.findAllPedidos();
         return ResponseEntity.ok(pedidos);
     }
 
+    // Lista de Pedidos do Usuário
+    @GetMapping("/list/OrderUser/{userId}")
+    public ResponseEntity<List<Pedido>> getAllOrderUser(@PathVariable Long userId) {
+        List<Pedido> pedidos = pedidoService.findAllOrderUser(userId);
+        return ResponseEntity.ok(pedidos);
+    }
+
+    // Avaliação de Entrega dos Pedidos do Usuário
+    @GetMapping("/list/AvaliationDelivery/{userId}")
+    public ResponseEntity<List<Pedido>> getAllOrderUserForAvaliation(@PathVariable Long userId) {
+        List<Pedido> pedidos = pedidoService.findAllOrderUserForAvaliation(userId);
+        return ResponseEntity.ok(pedidos);
+    }
+
+
+    @GetMapping("/list/delivery")
+    public ResponseEntity<List<PedidoComTempoEstimado>> getAllDelivery() {
+        List<PedidoComTempoEstimado> pedidos = pedidoService.findAllDelivery();
+        return ResponseEntity.ok(pedidos);
+    }
+
+    @GetMapping("/list/OrderDelivered")
+    public ResponseEntity<List<Pedido>> getAllOrderDelivered() {
+        List<Pedido> pedidos = pedidoService.findAllOrderDelivered();
+        return ResponseEntity.ok(pedidos);
+    }
+
     @GetMapping("/{id}")
-    public ResponseEntity<Pedido> getPedidoById(@PathVariable Long id) {
+    public ResponseEntity<Pedido> getOrderById(@PathVariable Long id) {
         return pedidoService.findPedidoById(id)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<Pedido> updatePedido(@PathVariable Long id, @RequestBody Pedido pedido) {
+    @PutMapping("/update/{id}")
+    public ResponseEntity<Pedido> updateOrder(@PathVariable Long id, @RequestBody Pedido pedido) {
         try {
+            System.out.println("Controller: "+pedido);
             Pedido updatedPedido = pedidoService.updatePedido(id, pedido);
             return ResponseEntity.ok(updatedPedido);
         } catch (IllegalArgumentException e) {
@@ -57,7 +86,7 @@ public class PedidoController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deletePedido(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteOrder(@PathVariable Long id) {
         try {
             pedidoService.deletePedido(id);
             return ResponseEntity.noContent().build();
