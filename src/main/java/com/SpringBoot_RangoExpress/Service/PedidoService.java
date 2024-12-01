@@ -27,8 +27,19 @@ public class PedidoService {
         return "Pedido cadastrado com sucesso!";
     }
 
+    // Lista de Pedidos
     public List<Pedido> findAllPedidos() {
         return pedidoRepository.findAll();
+    }
+
+    // Lista de Pedidos do Usuário
+    public List<Pedido> findAllOrderUser(Long userId) {
+        return pedidoRepository.findByIdUsuario(userId);
+    }
+
+    // Lista de Avaliação de Entrega dos Pedidos do Usuário
+    public List<Pedido> findAllOrderUserForAvaliation(Long userId) {
+        return pedidoRepository.findByIdUsuarioAndStatus(userId, StatusPedido.ENTREGUE);
     }
 
     public Optional<Pedido> findPedidoById(Long id) {
@@ -53,7 +64,7 @@ public class PedidoService {
         pedidoRepository.deleteById(id);
     }
 
-    /// ///////////////////////////////////////////////
+    // Lista de Entregas
 
     public List<PedidoComTempoEstimado> findAllDelivery() {
         List<Pedido> pedidosProntos = pedidoRepository.findByStatus(StatusPedido.PRONTO);
@@ -63,6 +74,11 @@ public class PedidoService {
                 LojaLocalização.getLatitude(),
                 LojaLocalização.getLongitude()
         );
+    }
+
+    // Lista de Avaliações Pedidos Entregue
+    public List<Pedido> findAllOrderDelivered() {
+        return pedidoRepository.findByStatus(StatusPedido.valueOf("ENTREGUE"));
     }
 
 }
