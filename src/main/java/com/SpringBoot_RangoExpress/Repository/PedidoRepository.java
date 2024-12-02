@@ -13,9 +13,9 @@ import java.util.List;
 public interface PedidoRepository extends JpaRepository<Pedido, Long> {
     // Métodos personalizados de consulta podem ser adicionados aqui
     List<Pedido> findByStatus(StatusPedido status);
-    List<Pedido> findByDataPedidoBetween(LocalDateTime inicio, LocalDateTime fim);
     List<Pedido> findByIdUsuario(long idUsuario);
     List<Pedido> findByIdUsuarioAndStatus(long idUsuario, StatusPedido status);
+    List<Pedido> findByDataPedidoBetween(LocalDateTime inicio, LocalDateTime fim);
 }
 
 

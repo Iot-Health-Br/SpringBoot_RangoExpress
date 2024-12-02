@@ -4,6 +4,7 @@ import com.SpringBoot_RangoExpress.Model.User;
 import com.SpringBoot_RangoExpress.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -92,8 +93,8 @@ public class StartApplication implements CommandLineRunner {
             user.setEndereco(endereco);
             user.setLatitude(latitude);
             user.setLongitude(longitude);
-            user.setPassword(password);
-            //user.setPassword(new BCryptPasswordEncoder().encode(password));
+            //user.setPassword(password);
+            user.setPassword(new BCryptPasswordEncoder().encode(password));
             user.getRoles().add(role);
             repository.save(user);
         }

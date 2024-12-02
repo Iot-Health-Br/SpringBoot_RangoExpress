@@ -4,6 +4,7 @@ import com.SpringBoot_RangoExpress.DTO.LoginResponse;
 import com.SpringBoot_RangoExpress.DTO.UserDetailsDTO;
 import com.SpringBoot_RangoExpress.Error.ErrorResponse;
 import com.SpringBoot_RangoExpress.Exception.NotFoundUserList;
+import com.SpringBoot_RangoExpress.Exception.UserNotFound;
 import com.SpringBoot_RangoExpress.Exception.UserWasRegistred;
 import com.SpringBoot_RangoExpress.Model.User;
 import com.SpringBoot_RangoExpress.Service.UserService;
@@ -45,12 +46,17 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<LoginResponse> login(@RequestBody User user) {
-        System.out.println("Login Recebido Controller: " + user.getCpf());
-        System.out.println("A Senha Recebida Controller: " + user.getPassword());
-        LoginResponse response = userService.findByUsernameAndPassword(user);
-        System.out.println("Retorno da Consulta: " + response);
-        return ResponseEntity.ok(response);
+    public ResponseEntity<?> login(@RequestBody User user) {
+        try{
+            LoginResponse response = userService.findByUsernameAndPassword(user);
+            return ResponseEntity.ok(response);
+        }catch (UserNotFound e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body(new ErrorResponse(e.getMessage()));
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(new ErrorResponse("Erro interno ao fazer login."));
+        }
     }
 
     @GetMapping("/getUser")
